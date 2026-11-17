@@ -344,7 +344,7 @@ function togglePassword(inputId, btn) {
 
 // Copy install command
 function copyInstall() {
-  var cmd = 'npm install formguard-js';
+  var cmd = 'npm install @ganiya1617/formguard-js';
   navigator.clipboard.writeText(cmd).then(function () {
     var btn = document.querySelector('.install-block .copy-btn span');
     if (btn) {
