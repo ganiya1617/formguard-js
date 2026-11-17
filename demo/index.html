@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FormGuard — Lightweight Form Validation Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 2L4 7v9c0 7.18 5.14 13.89 12 15.47C22.86 29.89 28 23.18 28 16V7L16 2z" fill="url(#shield-grad)" />
+          <path d="M12 16l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="shield-grad" x1="4" y1="2" x2="28" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7c3aed"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>FormGuard</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#code">Docs</a></li>
+      </ul>
+      <a href="https://www.npmjs.com/package/formguard-js" target="_blank" class="btn btn-sm btn-primary">npm</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-dot-grid"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        v1.0.0 — Now Available
+      </div>
+      <div class="hero-logo-wrap">
+        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" aria-label="FormGuard shield logo">
+          <path d="M16 2L4 7v9c0 7.18 5.14 13.89 12 15.47C22.86 29.89 28 23.18 28 16V7L16 2z" fill="url(#shield-grad-hero)" />
+          <path d="M12 16l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="shield-grad-hero" x1="4" y1="2" x2="28" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7c3aed"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="hero-title">Form<span class="gradient-text">Guard</span></h1>
+      <p class="hero-tagline">Lightweight. Powerful. Zero Dependencies.</p>
+      <p class="hero-sub">A tiny, composable form validation library for JavaScript. Works in the browser and Node.js. Schema validation, custom rules, and real-time feedback out of the box.</p>
+
+      <div class="install-block">
+        <span class="install-label">npm</span>
+        <code id="install-cmd" class="install-code">npm install formguard-js</code>
+        <button class="copy-btn" onclick="copyInstall()" aria-label="Copy install command">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+          </svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <div class="hero-actions">
+        <a href="https://github.com" target="_blank" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub
+        </a>
+        <a href="https://www.npmjs.com/package/formguard-js" target="_blank" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331z"/></svg>
+          npm Package
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">0</span>
+          <span class="stat-label">Dependencies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">&lt;5KB</span>
+          <span class="stat-label">Minified</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">ESM + CJS</span>
+          <span class="stat-label">Module Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DEMO SECTION -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive</span>
+        <h2 class="section-title">Live Form Validation</h2>
+        <p class="section-desc">Type in the fields below to see real-time validation powered by FormGuard.</p>
+      </div>
+
+      <div class="form-card glass-card">
+        <form id="demo-form" novalidate autocomplete="off">
+
+          <div class="form-row">
+            <div class="field-group">
+              <label for="f-name" class="field-label">Full Name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <input type="text" id="f-name" name="name" class="field-input" placeholder="John Doe" />
+                <span class="input-status-icon"></span>
+              </div>
+              <span class="field-error" id="err-name"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="f-email" class="field-label">Email Address</label>
+              <div class="input-wrap">
+                <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <input type="email" id="f-email" name="email" class="field-input" placeholder="john@example.com" />
+                <span class="input-status-icon"></span>
+              </div>
+              <span class="field-error" id="err-email"></span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="f-password" class="field-label">Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input type="password" id="f-password" name="password" class="field-input" placeholder="Create a strong password" />
+              <button type="button" class="toggle-pw" onclick="togglePassword('f-password', this)" aria-label="Toggle password visibility">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="err-password"></span>
+
+            <!-- PASSWORD STRENGTH METER -->
+            <div class="strength-meter" id="strength-meter">
+              <div class="strength-bar-wrap">
+                <div class="strength-segment" id="seg-1"></div>
+                <div class="strength-segment" id="seg-2"></div>
+                <div class="strength-segment" id="seg-3"></div>
+              </div>
+              <span class="strength-label" id="strength-label">Type a password</span>
+              <div class="strength-reqs">
+                <div class="req-pill" id="req-length">
+                  <span class="req-icon">✕</span>
+                  <span>Min 8 chars</span>
+                </div>
+                <div class="req-pill" id="req-upper">
+                  <span class="req-icon">✕</span>
+                  <span>Uppercase</span>
+                </div>
+                <div class="req-pill" id="req-lower">
+                  <span class="req-icon">✕</span>
+                  <span>Lowercase</span>
+                </div>
+                <div class="req-pill" id="req-number">
+                  <span class="req-icon">✕</span>
+                  <span>Number</span>
+                </div>
+                <div class="req-pill" id="req-special">
+                  <span class="req-icon">✕</span>
+                  <span>Special char</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="f-confirm" class="field-label">Confirm Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input type="password" id="f-confirm" name="confirmPassword" class="field-input" placeholder="Repeat your password" />
+              <button type="button" class="toggle-pw" onclick="togglePassword('f-confirm', this)" aria-label="Toggle password visibility">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <span class="field-error" id="err-confirm"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="f-phone" class="field-label">Phone Number</label>
+            <div class="input-wrap">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <input type="tel" id="f-phone" name="phone" class="field-input" placeholder="9876543210" />
+              <span class="input-status-icon"></span>
+            </div>
+            <span class="field-error" id="err-phone"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Validate &amp; Submit
+          </button>
+
+          <div class="form-success" id="form-success">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            All fields validated successfully! FormGuard approved ✓
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Everything You Need</h2>
+        <p class="section-desc">FormGuard covers the most common form validation scenarios with a minimal API surface.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap" style="--icon-color: #3b82f6;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 class="feature-title">Email Validation</h3>
+          <p class="feature-desc">RFC-compliant email format checking. Detects invalid domains, missing @, and malformed addresses instantly.</p>
+          <code class="feature-snippet">FormGuard.isEmail('user@example.com')</code>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap" style="--icon-color: #7c3aed;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h3 class="feature-title">Password Validation</h3>
+          <p class="feature-desc">Strength scoring with configurable rules: uppercase, lowercase, numbers, special characters, and minimum length.</p>
+          <code class="feature-snippet">FormGuard.passwordStrength('P@ss1')</code>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap" style="--icon-color: #10b981;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3 class="feature-title">Phone Validation</h3>
+          <p class="feature-desc">Validates international and local phone number formats. Strips spaces and dashes before checking.</p>
+          <code class="feature-snippet">FormGuard.isPhone('9876543210')</code>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap" style="--icon-color: #f59e0b;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="feature-title">Custom Rules</h3>
+          <p class="feature-desc">Register your own validation logic with <code>addRule()</code>. Composable and reusable across your whole app.</p>
+          <code class="feature-snippet">FormGuard.addRule('username', fn, msg)</code>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap" style="--icon-color: #ec4899;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3 class="feature-title">Schema Validation</h3>
+          <p class="feature-desc">Define a schema object and validate entire form payloads in one call. Perfect for API request validation.</p>
+          <code class="feature-snippet">FormGuard.validate(data, schema)</code>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE EXAMPLES SECTION -->
+  <section class="section" id="code">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Documentation</span>
+        <h2 class="section-title">Code Examples</h2>
+        <p class="section-desc">Get up and running in seconds. Zero configuration required.</p>
+      </div>
+
+      <div class="code-card glass-card">
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn active" role="tab" onclick="switchTab(0)" data-tab="0">Installation</button>
+          <button class="tab-btn" role="tab" onclick="switchTab(1)" data-tab="1">Basic Usage</button>
+          <button class="tab-btn" role="tab" onclick="switchTab(2)" data-tab="2">Schema Validation</button>
+          <button class="tab-btn" role="tab" onclick="switchTab(3)" data-tab="3">Custom Rules</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-0">
+          <div class="code-block-wrap">
+            <div class="code-lang">bash</div>
+            <button class="copy-code-btn" onclick="copyCode(0)" aria-label="Copy code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <pre class="code-block" id="code-0"><code><span class="kw">npm</span> install <span class="str">formguard-js</span></code></pre>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-1">
+          <div class="code-block-wrap">
+            <div class="code-lang">javascript</div>
+            <button class="copy-code-btn" onclick="copyCode(1)" aria-label="Copy code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <pre class="code-block" id="code-1"><code><span class="kw">import</span> FormGuard <span class="kw">from</span> <span class="str">'formguard-js'</span>;
+
+<span class="cmt">// Validate multiple fields at once</span>
+<span class="kw">const</span> result = FormGuard.validate({
+  email: <span class="str">'user@example.com'</span>,
+  password: <span class="str">'Hello@123'</span>,
+  phone: <span class="str">'9876543210'</span>
+});
+console.log(result);
+<span class="cmt">// { valid: true, errors: {} }</span>
+
+<span class="cmt">// Individual validators</span>
+FormGuard.isEmail(<span class="str">'test@gmail.com'</span>);
+<span class="cmt">// { valid: true, error: null }</span>
+
+FormGuard.checkPassword(<span class="str">'weak'</span>);
+<span class="cmt">// { valid: false, error: 'Password must be at least 8 characters' }</span>
+
+FormGuard.passwordStrength(<span class="str">'Hello@123'</span>);
+<span class="cmt">// { strength: 'Strong', score: 6, checks: { ... } }</span></code></pre>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-2">
+          <div class="code-block-wrap">
+            <div class="code-lang">javascript</div>
+            <button class="copy-code-btn" onclick="copyCode(2)" aria-label="Copy code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <pre class="code-block" id="code-2"><code><span class="kw">const</span> schema = {
+  email:    { required: <span class="bool">true</span>, type: <span class="str">'email'</span> },
+  password: { required: <span class="bool">true</span>, type: <span class="str">'password'</span>, minLength: <span class="num">8</span> },
+  phone:    { required: <span class="bool">true</span>, type: <span class="str">'phone'</span> }
+};
+
+<span class="kw">const</span> result = FormGuard.validate(formData, schema);
+<span class="cmt">// { valid: false, errors: { email: 'Invalid email address' } }</span></code></pre>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-3">
+          <div class="code-block-wrap">
+            <div class="code-lang">javascript</div>
+            <button class="copy-code-btn" onclick="copyCode(3)" aria-label="Copy code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+            <pre class="code-block" id="code-3"><code><span class="cmt">// Register a custom rule</span>
+FormGuard.addRule(
+  <span class="str">'username'</span>,
+  (value) => <span class="regex">/^[a-zA-Z0-9_]+$/</span>.test(value),
+  <span class="str">'Username must contain only letters, numbers, and underscores'</span>
+);
+
+<span class="cmt">// Use the custom rule</span>
+<span class="kw">const</span> result = FormGuard.validateWith(<span class="str">'john doe'</span>, <span class="str">'username'</span>);
+<span class="cmt">// { valid: false, error: 'Username must contain only letters...' }</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 2L4 7v9c0 7.18 5.14 13.89 12 15.47C22.86 29.89 28 23.18 28 16V7L16 2z" fill="url(#shield-grad-footer)" />
+          <path d="M12 16l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="shield-grad-footer" x1="4" y1="2" x2="28" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7c3aed"/>
+              <stop offset="1" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-name">FormGuard</span>
+      </div>
+      <p class="footer-tagline">Lightweight form validation. Zero dependencies.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://www.npmjs.com/package/formguard-js" target="_blank">npm</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="#code">Documentation</a>
+        <a href="#demo">Live Demo</a>
+      </nav>
+      <p class="footer-copy">MIT License &copy; 2024 FormGuard Contributors</p>
+    </div>
+  </footer>
+
+  <script src="../dist/formguard.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
