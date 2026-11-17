@@ -1,6 +1,7 @@
 # 🛡️ FormGuard
 
 [![npm version](https://img.shields.io/npm/v/formguard-js.svg?style=flat-square)](https://www.npmjs.com/package/formguard-js)
+[![GitHub](https://img.shields.io/badge/GitHub-ganiya1617%2Fformguard--js-blue?style=flat-square&logo=github)](https://github.com/ganiya1617/formguard-js)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg?style=flat-square)](https://www.npmjs.com/package/formguard-js)
 [![Node.js Version](https://img.shields.io/node/v/formguard-js.svg?style=flat-square)](https://nodejs.org)
@@ -1276,7 +1277,11 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📄 License
 
-MIT © [FormGuard Contributors](LICENSE)
+MIT © [Ganesh (ganiya1617)](LICENSE)
+
+- **GitHub Repository**: [https://github.com/ganiya1617/formguard-js](https://github.com/ganiya1617/formguard-js)
+- **Issues & Feedback**: [https://github.com/ganiya1617/formguard-js/issues](https://github.com/ganiya1617/formguard-js/issues)
+- **npm Package**: [https://www.npmjs.com/package/formguard-js](https://www.npmjs.com/package/formguard-js)
 
 ---
 
